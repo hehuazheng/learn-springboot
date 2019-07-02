@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+<!--    <bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"-->
+<!--          destroy-method="close">-->
+<!--        <property name="driverClass" value="com.mysql.jdbc.Driver" />-->
+<!--        <property name="jdbcUrl"-->
+<!--                  value="jdbc:mysql://vm:3306/test?characterEncoding=UTF8" />-->
+<!--        <property name="username" value="dev" />-->
+<!--        <property name="password" value="dev" />-->
+<!--    </bean>-->
+
+<!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource" />-->
+<!--        <property name="configLocation" value="classpath:/spring/mybatis.config.xml"></property>-->
+<!--        <property name="mapperLocations">-->
+<!--            <list>-->
+<!--                <value>classpath:com/hzz/mapper/*Mapper.xml</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
+
+<!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />-->
+<!--        <property name="basePackage" value="com.hzz.mapper"></property>-->
+<!--    </bean>-->
+</beans>
