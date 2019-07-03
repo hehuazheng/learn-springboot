@@ -1,5 +1,6 @@
 package com.hzz.controller;
 
+import com.hzz.empty.api.TestInterface;
 import com.hzz.model.Tb1;
 import com.hzz.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +17,18 @@ public class HelloController {
     @Resource
     private TestService testService;
 
+    @Resource
+    private TestInterface testInterface;
+
     @RequestMapping("/sayHi")
     public String sayHi(String name) {
         return "hi, " + name;
+    }
+
+    @RequestMapping("/empty")
+    public String empty(String v) {
+        return testInterface.m1(v);
+//        return "";
     }
 
     @RequestMapping("/select")
