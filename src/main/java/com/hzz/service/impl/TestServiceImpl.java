@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
-import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 import javax.annotation.Resource;
 
@@ -32,6 +31,14 @@ public class TestServiceImpl implements TestService {
 
     public Tb1 selectById(Long id) {
         return tb1Mapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class, timeout = 3, isolation = Isolation.REPEATABLE_READ, propagation = Propagation.REQUIRED)
+    public void selectManyTimes() {
+        tb1Mapper.selectByPrimaryKey(1L);
+        tb1Mapper.selectByPrimaryKey(1L);
+        return;
     }
 
     @Override

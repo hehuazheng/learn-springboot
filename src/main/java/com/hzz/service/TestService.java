@@ -8,6 +8,8 @@ import com.hzz.model.Tb1;
 public interface TestService {
     Tb1 selectById(Long id);
 
+    void selectManyTimes();
+
     void add(String v1, String v2, boolean rollback);
 
     void add2(String v1, String v2, boolean rollback);

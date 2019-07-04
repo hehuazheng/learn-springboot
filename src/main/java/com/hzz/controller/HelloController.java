@@ -5,6 +5,7 @@ import com.hzz.model.Tb1;
 import com.hzz.service.TestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,8 +39,7 @@ public class HelloController {
 
     @RequestMapping("/selectMany")
     public String selectMany() {
-        testService.selectById(1L);
-        testService.selectById(1L);
+        testService.selectManyTimes();
         return "success";
     }
 
