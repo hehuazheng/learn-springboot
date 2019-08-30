@@ -21,10 +21,15 @@ public class HelloController {
         return "hi, " + name;
     }
 
-    @PreAuthorize("hasAuthority('ADMIN')")
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin";
+//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    @GetMapping("/url")
+    public String url() {
+        return "http://xxx1.com";
+    }
+
+    @GetMapping("/url2")
+    public String url2() {
+        return "http://xxx2.com";
     }
 
 }
