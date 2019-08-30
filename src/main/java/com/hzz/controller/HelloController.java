@@ -21,7 +21,7 @@ public class HelloController {
         return "hi, " + name;
     }
 
-//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/url")
     public String url() {
         return "http://xxx1.com";
