@@ -30,6 +30,7 @@ public class MyUserDetailsService implements UserDetailsService {
                 ud = new User(s, s, Lists.<GrantedAuthority>newArrayList(new SimpleGrantedAuthority("GUEST")));
             } else {
                 ud = new User(s, s, Lists.<GrantedAuthority>newArrayList(new SimpleGrantedAuthority("anon")));
+                LOGGER.error("#########anonymous user login");
             }
             return ud;
         } catch (Exception e) {
