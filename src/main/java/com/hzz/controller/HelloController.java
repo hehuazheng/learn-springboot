@@ -20,11 +20,14 @@ public class HelloController {
     @Value("${test.username}")
     private String testUserName;
 
+    @Value("${test.username2}")
+    private String testUserName2;
+
     @RequestMapping("/sayHi")
     public String sayHi(String name, HttpServletResponse response) {
         LOGGER.debug("调用HelloController.sayHi参数name = {}", name);
         Cookie cookie = new Cookie("token", "hezz");
         response.addCookie(cookie);
-        return "hi, " + name + ", " + testUserName;
+        return "hi, " + name + ", " + testUserName + " " + testUserName2;
     }
 }

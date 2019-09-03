@@ -1,2 +1,2 @@
 org.springframework.context.ApplicationContextInitializer=\
-com.hzz.MyContextInitializer
+com.hzz.MyContextInitializer,com.hzz.MyContextInitializer2
