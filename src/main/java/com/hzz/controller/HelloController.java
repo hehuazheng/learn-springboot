@@ -1,11 +1,13 @@
 package com.hzz.controller;
 
+import com.hzz.service.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,11 +25,19 @@ public class HelloController {
     @Value("${test.username2}")
     private String testUserName2;
 
+    @Resource
+    private HelloService helloService;
+
     @RequestMapping("/sayHi")
     public String sayHi(String name, HttpServletResponse response) {
         LOGGER.debug("调用HelloController.sayHi参数name = {}", name);
         Cookie cookie = new Cookie("token", "hezz");
         response.addCookie(cookie);
         return "hi, " + name + ", " + testUserName + " " + testUserName2;
+    }
+
+    @RequestMapping("/hello")
+    public String hello(String name) {
+        return helloService.hello();
     }
 }
