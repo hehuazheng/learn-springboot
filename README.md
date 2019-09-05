@@ -20,3 +20,5 @@ static class CustomPasswordEncoder implements PasswordEncoder {
     }
 }
 ```
+
+### 自定义资源位置 + proxyCreator -> add_resource
