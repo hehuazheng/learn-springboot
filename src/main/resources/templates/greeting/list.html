@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Thymeleaf</title>
+</head>
+<body>
+<div>
+    <span>访问：</span><span th:text="${name}"></span>
+    <input type="text" id="input" maxlength="30" />
+    <input type="button" value="open" onclick="openClick()"/>
+    <input type="button" value="send" onclick="sendMsg()">
+    <input type="button" value="close" onclick="closeClick()"/>
+</div>
+<div>
+    <script type="text/javascript">
+		 var websocaket =null;
+		 	if('WebSocket' in window){
+				 websocaket = new WebSocket("ws://localhost:8080/my");//用于创建 WebSocket 对象。WebSocketTest对应的是java类的注解值
+		 	}
+		 	else {
+				alert("当前浏览器不支持");
+			}
+             //连接发生错误的时候回调方法；
+             websocaket.onerror=function(){
+                            alert("连接错误");
+             }
+             //连接成功时建立回调方法；
+             websocaket.onopen=function(){
+                    alert("连接成功");
+             }
+             //收到消息的回调方法
+             websocaket.onmessage=function(msg){
+                 alert(msg.data);
+             }
+             //连接关闭的回调方法
+             websocaket.onclose=function(){
+                 alert("关闭成功");
+             }
+
+         //关闭websocket
+         //
+         function closeClick() {
+             websocaket.close();
+             alert("点击关闭");
+        }
+
+         function sendMsg() {
+             var message = document.getElementById('input').value;
+             websocaket.send(message);//给后台发送数据
+        }
+    </script>
+</div>
+</body>
+</html>
