@@ -8,7 +8,7 @@
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
         <property name="jdbcUrl"
-                  value="jdbc:mysql://vm:3306/test?characterEncoding=UTF8" />
+                  value="jdbc:mysql://vm:3306/dev?characterEncoding=UTF8" />
         <property name="username" value="dev" />
         <property name="password" value="dev" />
     </bean>

@@ -16,15 +16,15 @@ import javax.sql.DataSource;
  */
 @Configuration("myDbConfiguration")
 public class MyDbConfiguration {
-    @Bean(destroyMethod = "close")
-    public DataSource dataSource() {
-        BoneCPDataSource ds = new BoneCPDataSource();
-        ds.setDriverClass("com.mysql.jdbc.Driver");
-        ds.setJdbcUrl("jdbc:mysql://vm:3306/test?characterEncoding=UTF8");
-        ds.setUsername("dev");
-        ds.setPassword("dev");
-        return ds;
-    }
+//    @Bean(destroyMethod = "close")
+//    public DataSource dataSource() {
+//        BoneCPDataSource ds = new BoneCPDataSource();
+//        ds.setDriverClass("com.mysql.jdbc.Driver");
+//        ds.setJdbcUrl("jdbc:mysql://vm:3306/test?characterEncoding=UTF8");
+//        ds.setUsername("dev");
+//        ds.setPassword("dev");
+//        return ds;
+//    }
 
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {

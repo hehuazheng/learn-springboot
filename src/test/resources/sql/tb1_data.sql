@@ -1,0 +1,1 @@
+insert into tb1 values(3, 'col3');
